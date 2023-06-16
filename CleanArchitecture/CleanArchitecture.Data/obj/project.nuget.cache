@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "egwGC3vJHEYqAG9eKr5CcokNOWB+WCxPTdMuqgaj+4WEpIh0vRVS3f52JQCUG0BG5Feh2Q+NCRotkvuCQgj7RA==",
+  "dgSpecHash": "+5QvnVCHgjhr/8kHz8umP9CNfmE7SmijtvgPYbGTniNbaYGA8GCEqRKQlnJtGm+dMa4EswDrD5rxas0gleFzqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.Data\\CleanArchitecture.Data.csproj",
+  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.Data\\CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\camil\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
