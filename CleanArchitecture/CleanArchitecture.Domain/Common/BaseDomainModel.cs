@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Domain
+namespace CleanArchitecture.Domain.Common
 {
     public class BaseDomainModel
     {
