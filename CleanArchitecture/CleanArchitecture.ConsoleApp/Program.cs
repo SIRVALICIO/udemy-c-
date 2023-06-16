@@ -1,5 +1,6 @@
 ﻿
 using CleanArchitecture.Data;
+using CleanArchitecture.Data.Migrations;
 using CleanArchitecture.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
@@ -8,7 +9,8 @@ using System.IO;
 using System.Security.Cryptography;
 
 StreamerDbContext dbContext = new();
-await AddNewDirectorWithVideo();
+await MultipleEntitiesQuery();
+//await AddNewDirectorWithVideo();
 //await AddNewActorWithVideo();
 //await AddNewStreamerWithVideoId();
 //await AddNewStreamerWithVideo();
@@ -204,4 +206,37 @@ async Task AddNewDirectorWithVideo()
     };
     await dbContext.AddAsync(director1);
     await dbContext.SaveChangesAsync();
+}
+
+async Task MultipleEntitiesQuery()
+{
+    //var videoWithActores = await dbContext!.Videos!.Include(q => q.Actores).FirstOrDefaultAsync(q => q.Id == 1);
+    //var actor = await dbContext!.Actores!.Select(q=>q.Nombre).ToListAsync();
+
+    /*
+         var videoWithDirector = await dbContext!.Videos!.Include(q => q.Director).Select(q => new
+    {
+        Director_Nombre_Completo = $"{q.Director.Nombre} {q.Director.Apellido}",
+        Movie=q.Nombre
+    }
+    ).ToListAsync();
+
+     
+     
+     */
+
+    var videoWithDirector = await dbContext!.Videos!
+        .Where(q=>q.Director!=null)
+        .Include(q => q.Director).Select(q => new
+    {
+        Director_Nombre_Completo = $"{q.Director.Nombre} {q.Director.Apellido}",
+        Movie=q.Nombre
+    }
+    ).ToListAsync();
+
+    foreach ( var movie in videoWithDirector)
+    {
+        Console.WriteLine($"{movie.Movie} - {movie.Director_Nombre_Completo}");
+    }
+
 }

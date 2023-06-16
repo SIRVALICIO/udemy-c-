@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CleanArchitecture.Data
-{
+{   //CAD VEZ>
     public class StreamerDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,6 +37,8 @@ namespace CleanArchitecture.Data
         public DbSet<Streamer>? Streamers { get; set; }
         
         public DbSet<Video>? Videos { get; set; }
+
+        public DbSet<Actor>? Actores { get; set; }
 
     }
 }
