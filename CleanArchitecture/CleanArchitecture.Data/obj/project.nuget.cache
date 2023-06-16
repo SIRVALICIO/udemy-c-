@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+5QvnVCHgjhr/8kHz8umP9CNfmE7SmijtvgPYbGTniNbaYGA8GCEqRKQlnJtGm+dMa4EswDrD5rxas0gleFzqg==",
+  "dgSpecHash": "dFQypPr0rJ1juxY0RumP0R2p1Alng3swpT330zh7YqGgsSRKpwCd5SpaPNcVuSlY/o8iCF7IGY0y6I90qwI+RA==",
   "success": true,
   "projectFilePath": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.Data\\CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [

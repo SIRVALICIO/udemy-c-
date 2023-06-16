@@ -1144,6 +1144,19 @@
           }
         }
       },
+      "CleanArchitecture.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CleanArchitecture.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchitecture.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitecture.Application.dll": {}
+        }
+      },
       "CleanArchitecture.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1158,7 +1171,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "CleanArchitecture.Domain": "1.0.0",
+          "CleanArchitecture.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7"
         },
         "compile": {
@@ -3487,6 +3500,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CleanArchitecture.Application/1.0.0": {
+      "type": "project",
+      "path": "../CleanArchitecture.Application/CleanArchitecture.Application.csproj",
+      "msbuildProject": "../CleanArchitecture.Application/CleanArchitecture.Application.csproj"
     },
     "CleanArchitecture.Domain/1.0.0": {
       "type": "project",
