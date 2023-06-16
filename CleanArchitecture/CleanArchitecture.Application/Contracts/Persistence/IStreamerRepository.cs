@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanArchitecture.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.Contracts.Persistence
 {
-    internal class IStreamerRepository
+    public interface IStreamerRepository: IAsyncRepository<Streamer>
     {
     }
 }
