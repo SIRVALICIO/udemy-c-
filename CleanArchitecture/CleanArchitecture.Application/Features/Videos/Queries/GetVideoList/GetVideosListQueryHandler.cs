@@ -7,7 +7,7 @@ namespace CleanArchitecture.Application.Features.Videos.Queries.GetVideoList
 {
     public class GetVideosListQueryHandler : IRequestHandler<GetVideosListQuery, List<VideosVm>>
 
-        
+
     {
         private readonly IVideoRepository _videoRepository;
         private readonly IMapper _mapper;

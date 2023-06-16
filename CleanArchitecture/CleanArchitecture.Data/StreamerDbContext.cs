@@ -1,10 +1,5 @@
 ﻿using CleanArchitecture.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchitecture.Data
 {   //CAD VEZ>
@@ -35,7 +30,7 @@ namespace CleanArchitecture.Data
         }
 
         public DbSet<Streamer>? Streamers { get; set; }
-        
+
         public DbSet<Video>? Videos { get; set; }
 
         public DbSet<Actor>? Actores { get; set; }

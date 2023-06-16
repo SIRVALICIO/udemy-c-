@@ -1,12 +1,7 @@
 ﻿
 using CleanArchitecture.Data;
-using CleanArchitecture.Data.Migrations;
 using CleanArchitecture.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Security.Cryptography;
 
 StreamerDbContext dbContext = new();
 await MultipleEntitiesQuery();
@@ -25,7 +20,7 @@ Console.ReadKey();
 
 async Task TrackingAndNotTracking()
 {
-    var StreamerWithtracking = await dbContext!.Streamers!.FirstOrDefaultAsync(x=>x.Id==1);
+    var StreamerWithtracking = await dbContext!.Streamers!.FirstOrDefaultAsync(x => x.Id == 1);
     var StreamerWithNotracking = await dbContext!.Streamers!.AsNoTracking().FirstOrDefaultAsync(x => x.Id == 2);
 
     StreamerWithtracking.Nombre = "Disney+";
@@ -37,24 +32,24 @@ async Task TrackingAndNotTracking()
 async Task QueryLinq()
 {
     Console.WriteLine($"Ingrese el servicio de streaming");
-    var streamerNombre = Console.ReadLine(); 
-    var streamers = await (from i in dbContext.Streamers where EF.Functions.Like(i.Nombre,$"%{streamerNombre}") select i).ToListAsync();
+    var streamerNombre = Console.ReadLine();
+    var streamers = await (from i in dbContext.Streamers where EF.Functions.Like(i.Nombre, $"%{streamerNombre}") select i).ToListAsync();
 
     foreach (var streamer in streamers)
     {
         Console.WriteLine($"{streamer.Id}-{streamer.Nombre}");
-        
+
     }
 }
 
 async Task QueryMethods()
 {
     var streamer = dbContext!.Streamers!;
-    var firstAsync = await dbContext!.Streamers!.Where(y=>y.Nombre.Contains("a")).FirstAsync();
+    var firstAsync = await dbContext!.Streamers!.Where(y => y.Nombre.Contains("a")).FirstAsync();
     var firstOrDefaultAsync = await dbContext!.Streamers!.Where(y => y.Nombre.Contains("a")).FirstOrDefaultAsync();
     var firstOrDefault_v2 = await dbContext!.Streamers!.FirstOrDefaultAsync(y => y.Nombre.Contains("a"));
 
-    var singleAsync = await streamer.Where(y => y.Id==1).SingleAsync();
+    var singleAsync = await streamer.Where(y => y.Id == 1).SingleAsync();
     var singleOrDefaultAsync = await streamer.Where(y => y.Id == 1).SingleOrDefaultAsync();
     var resultado = await streamer.FindAsync(1);
 
@@ -63,14 +58,14 @@ async Task QueryFilter()
 {
     Console.WriteLine($"Ingrese una compañia de Streaming: ");
     var streamingNombre = Console.ReadLine();
-    var streamers = await dbContext!.Streamers!.Where(x=>x.Nombre.Equals(streamingNombre)).ToListAsync();
+    var streamers = await dbContext!.Streamers!.Where(x => x.Nombre.Equals(streamingNombre)).ToListAsync();
     foreach (var streamer in streamers)
     {
         Console.WriteLine($"{streamer.Id}-{streamer.Nombre}");
     }
 
     ///var streamerPartialResults = await dbContext!.Streamers!.Where(x=>x.Nombre.Contains(streamingNombre)).ToListAsync();
-    var streamerPartialResults = await dbContext!.Streamers!.Where(x => EF.Functions.Like(x.Nombre,$"%{streamingNombre}%")).ToListAsync();
+    var streamerPartialResults = await dbContext!.Streamers!.Where(x => EF.Functions.Like(x.Nombre, $"%{streamingNombre}%")).ToListAsync();
 
     foreach (var streamer in streamerPartialResults)
     {
@@ -151,7 +146,7 @@ async Task AddNewStreamerWithVideoId()
     var Batman = new Video
     {
         Nombre = "batman",
-        StreamerId=6
+        StreamerId = 6
     };
 
     await dbContext.AddAsync(Batman);
@@ -202,7 +197,7 @@ async Task AddNewDirectorWithVideo()
     {
         Nombre = "Spilver",
         Apellido = "Spilver",
-        VideoId=sonic.Id
+        VideoId = sonic.Id
     };
     await dbContext.AddAsync(director1);
     await dbContext.SaveChangesAsync();
@@ -226,15 +221,15 @@ async Task MultipleEntitiesQuery()
      */
 
     var videoWithDirector = await dbContext!.Videos!
-        .Where(q=>q.Director!=null)
+        .Where(q => q.Director != null)
         .Include(q => q.Director).Select(q => new
-    {
-        Director_Nombre_Completo = $"{q.Director.Nombre} {q.Director.Apellido}",
-        Movie=q.Nombre
-    }
+        {
+            Director_Nombre_Completo = $"{q.Director.Nombre} {q.Director.Apellido}",
+            Movie = q.Nombre
+        }
     ).ToListAsync();
 
-    foreach ( var movie in videoWithDirector)
+    foreach (var movie in videoWithDirector)
     {
         Console.WriteLine($"{movie.Movie} - {movie.Director_Nombre_Completo}");
     }
