@@ -8,10 +8,12 @@ using System.IO;
 using System.Security.Cryptography;
 
 StreamerDbContext dbContext = new();
-
-
-await TrackingAndNotTracking();
-///await QueryLinq();
+await AddNewDirectorWithVideo();
+//await AddNewActorWithVideo();
+//await AddNewStreamerWithVideoId();
+//await AddNewStreamerWithVideo();
+//await TrackingAndNotTracking();
+//await QueryLinq();
 ///await QueryMethods();
 //await AddNewRecords();
 ///await QueryFilter();
@@ -121,4 +123,85 @@ async Task AddNewRecords()
     await dbContext.AddRangeAsync(movies);
     await dbContext.SaveChangesAsync();
 
+}
+
+async Task AddNewStreamerWithVideo()
+{
+    var pantalla = new Streamer
+    {
+        Nombre = "Pantalla"
+    };
+
+    var Halo = new Video
+    {
+        Nombre = "Halo",
+        Streamer = pantalla
+    };
+
+    await dbContext.AddAsync(Halo);
+    await dbContext.SaveChangesAsync();
+}
+
+async Task AddNewStreamerWithVideoId()
+{
+
+
+    var Batman = new Video
+    {
+        Nombre = "batman",
+        StreamerId=6
+    };
+
+    await dbContext.AddAsync(Batman);
+    await dbContext.SaveChangesAsync();
+}
+
+async Task AddNewActorWithVideo()
+{
+    var actor1 = new Actor
+    {
+
+        Nombre = "The Rock",
+        Apellido = "Wayne"
+
+    };
+    await dbContext.AddAsync(actor1); //AddAsync mete en la base ded datos de la informacion, pero solo se compelta la transaccion cuando se establece el SaveChangeAsync()
+    await dbContext.SaveChangesAsync();
+    var VideoActor = new VideoActor
+    {
+
+        ActorId = actor1.Id,
+        VideoId = 14
+
+    };
+
+    await dbContext.AddAsync(VideoActor);
+    await dbContext.SaveChangesAsync();
+
+}
+
+async Task AddNewDirectorWithVideo()
+
+
+
+{
+
+    var sonic = new Video
+    {
+        Nombre = "Video",
+        StreamerId = 8
+    };
+
+    await dbContext.AddAsync(sonic);
+    await dbContext.SaveChangesAsync();
+
+
+    var director1 = new Director
+    {
+        Nombre = "Spilver",
+        Apellido = "Spilver",
+        VideoId=sonic.Id
+    };
+    await dbContext.AddAsync(director1);
+    await dbContext.SaveChangesAsync();
 }
