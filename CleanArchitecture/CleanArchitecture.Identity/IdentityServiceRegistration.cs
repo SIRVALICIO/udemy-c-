@@ -1,13 +1,13 @@
 ﻿
-using CleanArchitecture.Application.Models.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using CleanArchitecture.Identity.Models;
-using Microsoft.AspNetCore.Identity;
 using CleanArchitecture.Application.Contracts.Identity;
+using CleanArchitecture.Application.Models.Identity;
+using CleanArchitecture.Identity.Models;
 using CleanArchitecture.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
