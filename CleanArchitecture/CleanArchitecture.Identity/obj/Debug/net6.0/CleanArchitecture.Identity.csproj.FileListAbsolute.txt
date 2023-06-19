@@ -1,0 +1,5 @@
+C:\Users\CAMILO\Documents\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.Identity\obj\Debug\net6.0\CleanArchitecture.Identity.csproj.AssemblyReference.cache
+C:\Users\CAMILO\Documents\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.Identity\obj\Debug\net6.0\CleanArchitecture.Identity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CAMILO\Documents\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.Identity\obj\Debug\net6.0\CleanArchitecture.Identity.AssemblyInfoInputs.cache
+C:\Users\CAMILO\Documents\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.Identity\obj\Debug\net6.0\CleanArchitecture.Identity.AssemblyInfo.cs
+C:\Users\CAMILO\Documents\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.Identity\obj\Debug\net6.0\CleanArchitecture.Identity.csproj.CoreCompileInputs.cache
