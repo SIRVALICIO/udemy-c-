@@ -1,6 +1,4 @@
-﻿
-
-namespace CleanArchitecture.Domain.Common
+﻿namespace CleanArchitecture.Domain.Common
 {
     public abstract class ValueObject
     {
@@ -10,7 +8,7 @@ namespace CleanArchitecture.Domain.Common
             {
                 return false;
             }
-            return ReferenceEquals(left, right) || left.Equals(right);
+            return ReferenceEquals(left, null) || left.Equals(right);
         }
 
         protected static bool NotEqualOperator(ValueObject left, ValueObject right)

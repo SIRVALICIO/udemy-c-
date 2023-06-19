@@ -3,52 +3,43 @@ using CleanArchitecture.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Persistence
-{   //CAD VEZ>
+{
     public class StreamerDbContext : DbContext
     {
         public StreamerDbContext(DbContextOptions<StreamerDbContext> options) : base(options)
         {
-
-
-
         }
 
 
-
-
-
-
-        /*
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=SQL2019\DLLO,14333;Initial Catalog=PRACTICA;User ID=practica;Password=practica;TrustServerCertificate=True")
-                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, Microsoft.Extensions.Logging.LogLevel.Information)
-                .EnableSensitiveDataLogging();
-        }*/
-
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Data Source=localhost; 
+        //        Initial Catalog=Streamer;user id=sa;password=VaxiDrez2025$")
+        //    .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, Microsoft.Extensions.Logging.LogLevel.Information)
+        //    .EnableSensitiveDataLogging();
+        //}
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<BaseDomainModel>())
             {
                 switch (entry.State)
-                {
-
+                { 
                     case EntityState.Added:
-                        entry.Entity.CreateDate = DateTime.Now;
-                        entry.Entity.CreateBy = "System";
+                        entry.Entity.CreatedDate =  DateTime.Now;
+                        entry.Entity.CreatedBy = "system";
                         break;
+
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
-                        entry.Entity.LastModifiedBy = "System";
-
+                        entry.Entity.LastModifiedBy = "system";
                         break;
-
                 }
             }
 
-            return base.SaveChangesAsync (cancellationToken);
+            return base.SaveChangesAsync(cancellationToken);
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -59,13 +50,18 @@ namespace CleanArchitecture.Infrastructure.Persistence
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
 
+
+
             modelBuilder.Entity<Video>()
                 .HasMany(p => p.Actores)
                 .WithMany(t => t.Videos)
                 .UsingEntity<VideoActor>(
                     pt => pt.HasKey(e => new { e.ActorId, e.VideoId })
                 );
+
+        
         }
+
 
         public DbSet<Streamer>? Streamers { get; set; }
 
@@ -73,7 +69,7 @@ namespace CleanArchitecture.Infrastructure.Persistence
 
         public DbSet<Actor>? Actores { get; set; }
 
-        public DbSet<Director> Directores { get; set; }
+        public DbSet<Director>? Directores { get; set; }
 
     }
 }

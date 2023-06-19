@@ -4,11 +4,6 @@ using CleanArchitecture.Application.Exceptions;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer
 {
@@ -16,7 +11,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStream
     {
         private readonly IStreamerRepository _streamerRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<UpdateStreamerCommandHandler>_logger;
+        private readonly ILogger<UpdateStreamerCommandHandler> _logger;
 
         public UpdateStreamerCommandHandler(IStreamerRepository streamerRepository, IMapper mapper, ILogger<UpdateStreamerCommandHandler> logger)
         {
@@ -27,7 +22,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStream
 
         public async Task<Unit> Handle(UpdateStreamerCommand request, CancellationToken cancellationToken)
         {
-            var streamerToUpdate=await _streamerRepository.GetByIdAsync(request.Id);
+           var streamerToUpdate =  await  _streamerRepository.GetByIdAsync(request.Id);
 
             if (streamerToUpdate == null)
             {
@@ -35,14 +30,13 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStream
                 throw new NotFoundException(nameof(Streamer), request.Id);
             }
 
-            //request------->         StreamerToUpdate - id, nombre,url
             _mapper.Map(request, streamerToUpdate, typeof(UpdateStreamerCommand), typeof(Streamer));
 
             await _streamerRepository.UpdateAsync(streamerToUpdate);
+
             _logger.LogInformation($"La operacion fue exitosa actualizando el streamer {request.Id}");
 
             return Unit.Value;
         }
-    
-}
+    }
 }
