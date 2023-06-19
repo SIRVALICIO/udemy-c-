@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Application.Models.Identity
 {
-    public class JwSettings
+    public class JwtSettings
     {
         public string Key { get; set; } = string.Empty;
         public string Issuer { get; set; } = string.Empty;

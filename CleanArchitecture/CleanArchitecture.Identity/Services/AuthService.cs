@@ -16,9 +16,9 @@ namespace CleanArchitecture.Identity.Services
 
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _singInManager;
-        private readonly JwSettings _jwSettings;
+        private readonly JwtSettings _jwSettings;
 
-        public AuthService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> singInManager, JwSettings jwSettings)
+        public AuthService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> singInManager, JwtSettings jwSettings)
         {
             _userManager = userManager;
             _singInManager = singInManager;
