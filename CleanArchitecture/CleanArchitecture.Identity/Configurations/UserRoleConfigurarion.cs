@@ -8,7 +8,7 @@ namespace CleanArchitecture.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
         {
-            builder.HasData{
+            builder.HasData(
                 new IdentityUserRole<string>
                 {
 
@@ -17,15 +17,16 @@ namespace CleanArchitecture.Identity.Configurations
 
 
                 },
-                  new IdentityUserRole<string>
-                  {
+                new IdentityUserRole<string>
+                {
 
-                      RoleId = "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d",
-                      UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c"
+                    RoleId = "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d",
+                    UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c"
 
 
-                  }
-            }
+                }
+            );
+
         }
     }
 }

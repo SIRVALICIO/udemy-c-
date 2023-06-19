@@ -17,7 +17,7 @@ namespace CleanArchitecture.Identity
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
-            ModelBuilder.ApplyConfiguration(new UserRoleConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfigurarion());
 
 
         }
