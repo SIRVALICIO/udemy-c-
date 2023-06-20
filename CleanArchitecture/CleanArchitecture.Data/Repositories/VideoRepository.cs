@@ -17,7 +17,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
 
         public async Task<IEnumerable<Video>> GetVideoByUsername(string username)
         {
-            return await _context.Videos!.Where(v => v.CreatedBy == username).ToListAsync();
+            return await _context.Videos!.Where(v => v.CreatedBy == username).ToListAsync(); //AQUI SE JODE
         }
     }
 }

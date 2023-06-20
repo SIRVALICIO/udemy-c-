@@ -23,7 +23,7 @@ namespace CleanArchitecture.Application.Behaviours
             {
                 return await next();
             }
-            catch (Exception ex) { 
+            catch (Exception ex) {
                 var requestName = typeof(TRequest).Name;
                 _logger.LogError(ex, "Application Request: Sucedio una excepcion para el request {Name} {@Request}", requestName, request);
                 throw;
