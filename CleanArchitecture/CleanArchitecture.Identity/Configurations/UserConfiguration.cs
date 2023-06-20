@@ -2,11 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchitecture.Identity.Configurations
 {
@@ -14,37 +9,36 @@ namespace CleanArchitecture.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
-
-            var hasher= new PasswordHasher<ApplicationUser>();
+            var hasher = new PasswordHasher<ApplicationUser>();
             builder.HasData(
-
-
-                new ApplicationUser
-                {
-                    Id = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c",
-                    Email = "Admin@local.com",
-                    NormalizedEmail = "Admin@local.com",
-                    Nombre = "Val",
-                    Apellidos = "Icio",
-                    UserName = "Sirvalicio",
-                    NormalizedUserName = "Sirvalicio",
-                    PasswordHash = hasher.HashPassword(null, "Esto es una contraseña al revez"),
-                    EmailConfirmed = true
-                }, new ApplicationUser
-                {
-                    Id = "97913b19-8469-4960-a0a0-a3cc65d88b8c",
-                    Email = "NoAdmin@local.com",
-                    NormalizedEmail = "NoAdmin@local.com",
-                    Nombre = "Lav",
-                    Apellidos = "Oici",
-                    UserName = "Lavoici",
-                    NormalizedUserName = "UserNameGenrico",
-                    PasswordHash = hasher.HashPassword(null, "Esto es una contraseña cifrada"),
-                    EmailConfirmed = true
-                }
-
+                    new ApplicationUser
+                    {
+                        Id = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
+                        Email = "admin@locahost.com",
+                        NormalizedEmail = "admin@locahost.com",
+                        Nombre = "Vaxi",
+                        Apellidos = "Drez",
+                        UserName = "vaxidrez",
+                        NormalizedUserName = "vaxidrez",
+                        PasswordHash = hasher.HashPassword(null, "VaxiDrez2025$"),
+                        EmailConfirmed = true,
+                    },
+                    new ApplicationUser
+                    {
+                        Id = "294d249b-9b57-48c1-9689-11a91abb6447",
+                        Email = "juanperez@locahost.com",
+                        NormalizedEmail = "juanperez@locahost.com",
+                        Nombre = "Juan",
+                        Apellidos = "Perez",
+                        UserName = "juanperez",
+                        NormalizedUserName = "juanperez",
+                        PasswordHash = hasher.HashPassword(null, "VaxiDrez2025$"),
+                        EmailConfirmed = true,
+                    }
 
                 );
+
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace CleanArchitecture.Identity.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.18")
+                .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -97,39 +97,39 @@ namespace CleanArchitecture.Identity.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c",
+                            Id = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
                             AccessFailedCount = 0,
-                            Apellidos = "Icio",
-                            ConcurrencyStamp = "d2ec3f54-f921-450c-8800-6aafdc8f34c0",
-                            Email = "Admin@local.com",
+                            Apellidos = "Drez",
+                            ConcurrencyStamp = "0e53003f-72cd-44ef-a53c-19a30ed0aa15",
+                            Email = "admin@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            Nombre = "Val",
-                            NormalizedEmail = "Admin@local.com",
-                            NormalizedUserName = "Sirvalicio",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM+q/oHhpr0rvCUqCvFvEPeyEXKekb7SxylSrmI5R0D9zkj5Q6N+3lnjodmZMDtpjg==",
+                            Nombre = "Vaxi",
+                            NormalizedEmail = "admin@locahost.com",
+                            NormalizedUserName = "vaxidrez",
+                            PasswordHash = "AQAAAAEAACcQAAAAENWtdrn6GOb1rjLWPIwP2qHmJR+FPwXhAKlpL8c7WnhrHwR19aE4kGV2B04r+NAelQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edbca7fc-9356-4e73-affc-46bfbd63e196",
+                            SecurityStamp = "ba36f476-a51b-42b9-ae3e-f9d56a02cec3",
                             TwoFactorEnabled = false,
-                            UserName = "Sirvalicio"
+                            UserName = "vaxidrez"
                         },
                         new
                         {
-                            Id = "97913b19-8469-4960-a0a0-a3cc65d88b8c",
+                            Id = "294d249b-9b57-48c1-9689-11a91abb6447",
                             AccessFailedCount = 0,
-                            Apellidos = "Oici",
-                            ConcurrencyStamp = "95e39c6b-3f5a-4b1c-86b4-b62b9b226b1d",
-                            Email = "NoAdmin@local.com",
+                            Apellidos = "Perez",
+                            ConcurrencyStamp = "24f6e7bf-1fb8-471a-a80c-9a5548c7ac37",
+                            Email = "juanperez@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            Nombre = "Lav",
-                            NormalizedEmail = "NoAdmin@local.com",
-                            NormalizedUserName = "UserNameGenrico",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAy1IcH7LhwdWVwJ0FwUPgJII2ewuSFqfae25+bN+XiHF/jCEqmPkz37ndiun0V+Tg==",
+                            Nombre = "Juan",
+                            NormalizedEmail = "juanperez@locahost.com",
+                            NormalizedUserName = "juanperez",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPoY1NL8nfyIDPWjpv7Qsvt/GmltN5fvLoz3LEdB8EnSLJrX2C7F4typ4u6B1Jo18A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edad7d4e-e7ad-419f-a97e-cd2488cf44c7",
+                            SecurityStamp = "4bdfd5da-f264-493c-b718-662ab0415459",
                             TwoFactorEnabled = false,
-                            UserName = "Lavoici"
+                            UserName = "juanperez"
                         });
                 });
 
@@ -162,15 +162,15 @@ namespace CleanArchitecture.Identity.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e8aeef76-c555-44e9-a961-4422fda03748",
-                            ConcurrencyStamp = "e7661021-4809-4faf-bc5b-dcf5b10d1ff6",
+                            Id = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8",
+                            ConcurrencyStamp = "af66e885-a884-4487-8cf1-193bb3d7246b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d",
-                            ConcurrencyStamp = "5169cede-5ad3-423c-9a4d-ffeae175da7d",
+                            Id = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
+                            ConcurrencyStamp = "476abfdf-9007-429e-ad9c-41e5e464f13c",
                             Name = "Operator",
                             NormalizedName = "OPERATOR"
                         });
@@ -265,13 +265,13 @@ namespace CleanArchitecture.Identity.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c",
-                            RoleId = "e8aeef76-c555-44e9-a961-4422fda03748"
+                            UserId = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
+                            RoleId = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8"
                         },
                         new
                         {
-                            UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c",
-                            RoleId = "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d"
+                            UserId = "294d249b-9b57-48c1-9689-11a91abb6447",
+                            RoleId = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63"
                         });
                 });
 

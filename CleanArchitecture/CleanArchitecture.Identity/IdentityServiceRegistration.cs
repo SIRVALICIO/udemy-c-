@@ -1,5 +1,4 @@
-﻿
-using CleanArchitecture.Application.Contracts.Identity;
+﻿using CleanArchitecture.Application.Contracts.Identity;
 using CleanArchitecture.Application.Models.Identity;
 using CleanArchitecture.Identity.Models;
 using CleanArchitecture.Identity.Services;
@@ -18,15 +17,14 @@ namespace CleanArchitecture.Identity
         public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
-            services.AddDbContext<CleanArchitectureIdentityDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("IdentityConnectionString"),
-                b => b.MigrationsAssembly(typeof(CleanArchitectureIdentityDbContext).Assembly.FullName))
 
-            );
+            services.AddDbContext<CleanArchitectureIdentityDbContext>(options => 
+                options.UseSqlServer(configuration.GetConnectionString("IdentityConnectionString"),
+                b => b.MigrationsAssembly(typeof(CleanArchitectureIdentityDbContext).Assembly.FullName)));
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<CleanArchitectureIdentityDbContext>()
-                .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<CleanArchitectureIdentityDbContext>().AddDefaultTokenProviders();
 
 
             services.AddTransient<IAuthService, AuthService>();
@@ -35,27 +33,25 @@ namespace CleanArchitecture.Identity
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
             }).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    ValidateIssuer = false,
-                    ValidateActor = true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero,
+                    ClockSkew   = TimeSpan.Zero,
                     ValidIssuer = configuration["JwtSettings:Issuer"],
                     ValidAudience = configuration["JwtSettings:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:Key"]))
-
                 };
+
             });
+
 
             return services;
 
-
         }
-
     }
 }

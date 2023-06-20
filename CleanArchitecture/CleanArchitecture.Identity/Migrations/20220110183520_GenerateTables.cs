@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CleanArchitecture.Identity.Migrations
 {
-    public partial class generateTables : Migration
+    public partial class GenerateTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -161,8 +161,8 @@ namespace CleanArchitecture.Identity.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "e8aeef76-c555-44e9-a961-4422fda03748", "e7661021-4809-4faf-bc5b-dcf5b10d1ff6", "Administrator", "ADMINISTRATOR" },
-                    { "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d", "5169cede-5ad3-423c-9a4d-ffeae175da7d", "Operator", "OPERATOR" }
+                    { "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8", "af66e885-a884-4487-8cf1-193bb3d7246b", "Administrator", "ADMINISTRATOR" },
+                    { "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63", "476abfdf-9007-429e-ad9c-41e5e464f13c", "Operator", "OPERATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -170,19 +170,19 @@ namespace CleanArchitecture.Identity.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Apellidos", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Nombre", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c", 0, "Icio", "d2ec3f54-f921-450c-8800-6aafdc8f34c0", "Admin@local.com", true, false, null, "Val", "Admin@local.com", "Sirvalicio", "AQAAAAEAACcQAAAAEM+q/oHhpr0rvCUqCvFvEPeyEXKekb7SxylSrmI5R0D9zkj5Q6N+3lnjodmZMDtpjg==", null, false, "edbca7fc-9356-4e73-affc-46bfbd63e196", false, "Sirvalicio" },
-                    { "97913b19-8469-4960-a0a0-a3cc65d88b8c", 0, "Oici", "95e39c6b-3f5a-4b1c-86b4-b62b9b226b1d", "NoAdmin@local.com", true, false, null, "Lav", "NoAdmin@local.com", "UserNameGenrico", "AQAAAAEAACcQAAAAEAy1IcH7LhwdWVwJ0FwUPgJII2ewuSFqfae25+bN+XiHF/jCEqmPkz37ndiun0V+Tg==", null, false, "edad7d4e-e7ad-419f-a97e-cd2488cf44c7", false, "Lavoici" }
+                    { "294d249b-9b57-48c1-9689-11a91abb6447", 0, "Perez", "24f6e7bf-1fb8-471a-a80c-9a5548c7ac37", "juanperez@locahost.com", true, false, null, "Juan", "juanperez@locahost.com", "juanperez", "AQAAAAEAACcQAAAAEPoY1NL8nfyIDPWjpv7Qsvt/GmltN5fvLoz3LEdB8EnSLJrX2C7F4typ4u6B1Jo18A==", null, false, "4bdfd5da-f264-493c-b718-662ab0415459", false, "juanperez" },
+                    { "f284b3fd-f2cf-476e-a9b6-6560689cc48c", 0, "Drez", "0e53003f-72cd-44ef-a53c-19a30ed0aa15", "admin@locahost.com", true, false, null, "Vaxi", "admin@locahost.com", "vaxidrez", "AQAAAAEAACcQAAAAENWtdrn6GOb1rjLWPIwP2qHmJR+FPwXhAKlpL8c7WnhrHwR19aE4kGV2B04r+NAelQ==", null, false, "ba36f476-a51b-42b9-ae3e-f9d56a02cec3", false, "vaxidrez" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "e8aeef76-c555-44e9-a961-4422fda03748", "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c" });
+                values: new object[] { "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63", "294d249b-9b57-48c1-9689-11a91abb6447" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d", "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c" });
+                values: new object[] { "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8", "f284b3fd-f2cf-476e-a9b6-6560689cc48c" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -4,29 +4,23 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CleanArchitecture.Identity.Configurations
 {
-    public class UserRoleConfigurarion : IEntityTypeConfiguration<IdentityUserRole<string>>
+    public class UserRoleConfiguration : IEntityTypeConfiguration<IdentityUserRole<string>>
     {
         public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
         {
             builder.HasData(
                 new IdentityUserRole<string>
                 {
-
-                    RoleId = "e8aeef76-c555-44e9-a961-4422fda03748",
-                    UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c"
-
-
+                    RoleId = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8",
+                    UserId = "f284b3fd-f2cf-476e-a9b6-6560689cc48c"
                 },
                 new IdentityUserRole<string>
                 {
-
-                    RoleId = "fcbfc740-8868-4a4e-845b-ed2fe45e8d6d",
-                    UserId = "812e5689-2f65-4ca5-a4fb-dd8c9ca2286c"
-
-
+                    RoleId = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
+                    UserId = "294d249b-9b57-48c1-9689-11a91abb6447"
                 }
-            );
 
+            );
         }
     }
 }

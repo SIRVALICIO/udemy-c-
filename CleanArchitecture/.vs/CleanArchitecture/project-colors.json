@@ -35,7 +35,12 @@
       "ProjectGuid": "8b02adff-81bd-4b7a-98d3-75f15ef7ac3a",
       "DisplayName": "CleanArchitecture.Infrastructure",
       "ColorIndex": 5
+    },
+    "5d5e0569-d493-478e-9267-78f53990066e": {
+      "ProjectGuid": "5d5e0569-d493-478e-9267-78f53990066e",
+      "DisplayName": "CleanArchitecture.Identity",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
