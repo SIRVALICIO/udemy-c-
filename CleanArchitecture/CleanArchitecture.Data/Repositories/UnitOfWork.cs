@@ -37,7 +37,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
             if (!_repositories.ContainsKey(type))
             {
 
-                var repositoyType = typeof(IAsyncRepository<>);
+                var repositoyType = typeof(RepositoryBase<>);
                 var repositoryInstance = Activator.CreateInstance(repositoyType.MakeGenericType(typeof(TEntity)), _context);
                 _repositories.Add(type, repositoryInstance);
 
