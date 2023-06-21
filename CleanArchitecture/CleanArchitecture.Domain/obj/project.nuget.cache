@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vVSJ2CD/rzuOASNY1kZOg/dxJEIJdlia6l+trHq8zbItjN7V7tk6EU51IswC19rljCjaIUl+EGyf5nl+BtKUqQ==",
+  "dgSpecHash": "CyVu61Yy3dnJq3yWU781BkACyZaUanqqlnKdG0cLCIXH5Yv3s4NoKGJ/CCwRQjvOavxAVD23Q5/pxOPcwO6gHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj",
+  "projectFilePath": "C:\\Users\\CAMILO\\Documents\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
