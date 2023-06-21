@@ -25,7 +25,7 @@ namespace CleanArchitecture.Applictaion.UnitTests.Features.Video.Queries
             });
 
             _mapper = mapperConfig.CreateMapper();
-        
+
         }
 
         [Fact]
@@ -33,10 +33,12 @@ namespace CleanArchitecture.Applictaion.UnitTests.Features.Video.Queries
         public async Task GetVideoListTest()
         {
             var handler = new GetVideosListQueryHandler(_unitOfWork.Object,_mapper);
-            var request = new GetVideosListQuery("system");
+            var request = new GetVideosListQuery("Val");
             var result= await handler.Handle(request, CancellationToken.None);
 
             result.ShouldBeOfType<List<VideosVm>>();
+
+            result.Count.ShouldBe(1);
         }
 
     }
