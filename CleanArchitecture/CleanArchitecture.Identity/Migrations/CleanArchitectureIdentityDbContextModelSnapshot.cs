@@ -100,16 +100,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
                             AccessFailedCount = 0,
                             Apellidos = "Drez",
-                            ConcurrencyStamp = "0e53003f-72cd-44ef-a53c-19a30ed0aa15",
+                            ConcurrencyStamp = "8767766b-1bcf-4854-bb16-d362e9a56644",
                             Email = "admin@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Vaxi",
                             NormalizedEmail = "admin@locahost.com",
                             NormalizedUserName = "vaxidrez",
-                            PasswordHash = "AQAAAAEAACcQAAAAENWtdrn6GOb1rjLWPIwP2qHmJR+FPwXhAKlpL8c7WnhrHwR19aE4kGV2B04r+NAelQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJIxdoQcfk/I/7XBddVWZvX1aM04LTcp0un9CsX2c/CmI5K0wXiZ4t1U0Aty9kIf/A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ba36f476-a51b-42b9-ae3e-f9d56a02cec3",
+                            SecurityStamp = "b17a8a35-a8d6-449a-bcce-d03ae3623bcd",
                             TwoFactorEnabled = false,
                             UserName = "vaxidrez"
                         },
@@ -118,16 +118,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "294d249b-9b57-48c1-9689-11a91abb6447",
                             AccessFailedCount = 0,
                             Apellidos = "Perez",
-                            ConcurrencyStamp = "24f6e7bf-1fb8-471a-a80c-9a5548c7ac37",
+                            ConcurrencyStamp = "96278be5-8594-4b7a-a2bb-5dff2161b6a1",
                             Email = "juanperez@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Juan",
                             NormalizedEmail = "juanperez@locahost.com",
                             NormalizedUserName = "juanperez",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPoY1NL8nfyIDPWjpv7Qsvt/GmltN5fvLoz3LEdB8EnSLJrX2C7F4typ4u6B1Jo18A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELzg+hAeMWcGv6XrmsHkxrD6WtpZkTp6MDEcr8JQaVU9FYXHGWCCEMVcoXUiArQslQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4bdfd5da-f264-493c-b718-662ab0415459",
+                            SecurityStamp = "230fdc58-7dc2-4a32-a207-7bf9706bf0f5",
                             TwoFactorEnabled = false,
                             UserName = "juanperez"
                         });
@@ -163,16 +163,23 @@ namespace CleanArchitecture.Identity.Migrations
                         new
                         {
                             Id = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8",
-                            ConcurrencyStamp = "af66e885-a884-4487-8cf1-193bb3d7246b",
+                            ConcurrencyStamp = "64d23dfc-009e-485f-b151-88bdc4ed94d0",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
-                            ConcurrencyStamp = "476abfdf-9007-429e-ad9c-41e5e464f13c",
+                            ConcurrencyStamp = "72cd3a0e-c12d-41c6-9ddf-3296a8db7fd0",
                             Name = "Operator",
                             NormalizedName = "OPERATOR"
+                        },
+                        new
+                        {
+                            Id = "9926c17c-ffe7-43ad-a3b3-b6d50ca71a63",
+                            ConcurrencyStamp = "ad7f7156-6567-4dfe-937c-238a80f33999",
+                            Name = "prueba",
+                            NormalizedName = "PRUEBA"
                         });
                 });
 

@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Applictaion.UnitTests.Mocks;
+using CleanArchitecture.Infrastructure.Repositories;
 using Moq;
 using Shouldly;
 using Xunit;
@@ -13,7 +14,7 @@ namespace CleanArchitecture.Applictaion.UnitTests.Features.Video.Queries
     {
 
         private readonly IMapper _mapper;
-        private readonly Mock<IUnitOfWork> _unitOfWork;
+        private readonly Mock<UnitOfWork> _unitOfWork;
 
         public GetVideosListQueryHandlerXUnitTest()
         {
@@ -25,6 +26,8 @@ namespace CleanArchitecture.Applictaion.UnitTests.Features.Video.Queries
             });
 
             _mapper = mapperConfig.CreateMapper();
+
+            MockVideoRepository.AddDataVideoRepository(_unitOfWork.Object.StreamerDbContext);
 
         }
 

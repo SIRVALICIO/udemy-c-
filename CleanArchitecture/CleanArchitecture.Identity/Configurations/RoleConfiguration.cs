@@ -21,7 +21,13 @@ namespace CleanArchitecture.Identity.Configurations
                     Id = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
                     Name = "Operator",
                     NormalizedName = "OPERATOR"
-                }
+                },
+                 new IdentityRole
+                 {
+                     Id = "9926c17c-ffe7-43ad-a3b3-b6d50ca71a63",
+                     Name = "prueba",
+                     NormalizedName = "PRUEBA"
+                 }
 
 
             );

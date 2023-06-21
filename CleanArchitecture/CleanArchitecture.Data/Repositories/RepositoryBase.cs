@@ -69,6 +69,8 @@ namespace CleanArchitecture.Infrastructure.Repositories
             return await _context.Set<T>().FindAsync(id);
         }
 
+
+    
         public async Task<T> AddAsync(T entity)
         {
             _context.Set<T>().Add(entity);
@@ -111,5 +113,6 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             _context.Set<T>().Remove(entity);
         }
+
     }
 }

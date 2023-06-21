@@ -5,11 +5,7 @@ using CleanArchitecture.Application.Models;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CleanArchitecture.Application.Features.Streamers.Commands
 {
@@ -20,9 +16,9 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailservice;
-        private readonly ILogger<CreateStreamerCommandHandler> _logger;
+        private readonly ILogger<CreateStreamerCommand> _logger;
 
-        public CreateStreamerCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommandHandler> logger)
+        public CreateStreamerCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommand> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;

@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace CleanArchitecture.Infrastructure.Repositories
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
         private Hashtable _repositories;
@@ -17,16 +17,21 @@ namespace CleanArchitecture.Infrastructure.Repositories
         public IVideoRepository VideoRepository => _videoRepository ??= new VideoRepository(_context);
         public IStreamerRepository StreamerRepository=> _streamerRepository??= new StreamerRepository(_context);
 
-
-
         public UnitOfWork(StreamerDbContext context)
         {
             _context = context;
         }
 
+        public StreamerDbContext StreamerDbContext => _context;
+
+
+
         public async Task<int> Complete()
         {
-            return await _context.SaveChangesAsync();
+            try { return await _context.SaveChangesAsync(); } catch (Exception) { throw new Exception("Err"); }
+
+
+
         }
 
         public void Dispose()

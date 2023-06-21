@@ -10,6 +10,12 @@ namespace CleanArchitecture.Infrastructure.Repositories
         public VideoRepository(StreamerDbContext context) : base(context)
         { 
         }
+
+        public async Task<IEnumerable<Video>> GetVideoByIdStreamer(int streamerId)
+        {
+            return await _context.Videos!.Where(v => v.StreamerId.Equals(streamerId)).ToListAsync();
+        }
+
         public async Task<Video> GetVideoByNombre(string nombreVideo)
         {
             return await _context.Videos!.Where(o => o.Nombre == nombreVideo).FirstOrDefaultAsync();
@@ -19,5 +25,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             return await _context.Videos!.Where(v => v.CreatedBy == username).ToListAsync(); //AQUI SE JODE
         }
-    }
+
+      
+}
 }

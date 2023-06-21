@@ -6,5 +6,7 @@ namespace CleanArchitecture.Application.Contracts.Persistence
     {
         Task<Video> GetVideoByNombre(string nombreVideo);
         Task<IEnumerable<Video>> GetVideoByUsername(string username);
+
+        Task<IEnumerable<Video>> GetVideoByIdStreamer(int streamerId);
     }
 }

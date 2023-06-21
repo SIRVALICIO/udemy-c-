@@ -25,7 +25,16 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.DeleteStream
         {
             //var streamerToDelete = await _streamerRepository.GetByIdAsync(request.Id);
             var streamerToDelete = await _unitOfWork.StreamerRepository.GetByIdAsync(request.Id);
-            
+
+            var listaVideos = await _unitOfWork.VideoRepository.GetVideoByIdStreamer(request.Id);
+
+           
+            foreach(var videos in listaVideos)
+            {
+                await _unitOfWork.VideoRepository.DeleteAsync(videos);
+            }
+
+
             if (streamerToDelete == null)
             {
                 _logger.LogError($"{request.Id} streamer no existe en el sistema");
