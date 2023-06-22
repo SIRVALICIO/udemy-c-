@@ -27,12 +27,21 @@ namespace CleanArchitecture.Application.Features.Videos.Commands.CreateVideo
         {
             var videoEntity = _mapper.Map<Video>(request);
             //var newStreamer = await _streamerRepository.AddAsync(streamerEntity);
+
+            var existensia = await _unitOfWork.StreamerRepository.GetByIdAsync(request.StreamerId);
+            if (existensia == null) {
+
+                //throw new Exception($"No se pudo insetar el record de video dado que no existe el streamer");
+                return 0;
+            
+            }
+
             _unitOfWork.VideoRepository.AddEntity(videoEntity);
             var result = await _unitOfWork.Complete();
 
             if (result <= 0)
             {
-                throw new Exception($"No se pudo insetar el record de stramer");
+                throw new Exception($"No se pudo insetar el record de video");
             }
 
 
