@@ -3,7 +3,8 @@ using CleanArchitecture.Domain.Common;
 
 namespace CleanArchitecture.Domain
 {
-    public class Director : BaseDomainModel
+    public class 
+     Director   : BaseDomainModel
     {
         
         
@@ -14,6 +15,7 @@ namespace CleanArchitecture.Domain
         public int VideoId { get; set; }
 
         public virtual Video? Video { get; set; }
+        public virtual ICollection<Video> Videos { get; set; }
 
     }
 }

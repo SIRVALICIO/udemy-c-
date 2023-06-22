@@ -70,7 +70,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
         }
 
 
-    
+
         public async Task<T> AddAsync(T entity)
         {
             _context.Set<T>().Add(entity);

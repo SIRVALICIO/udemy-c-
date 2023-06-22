@@ -23,6 +23,11 @@ namespace CleanArchitecture.Application.Features.Directors.Commands.CreateDirect
         {
             var directorEntity = _mapper.Map<Director>(request);
             _unitOfWork.Repository<Director>().AddEntity(directorEntity);
+
+
+            
+
+
             var result= await _unitOfWork.Complete();
 
             if (result <= 0)

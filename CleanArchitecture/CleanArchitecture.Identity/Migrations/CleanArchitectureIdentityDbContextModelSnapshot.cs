@@ -21,6 +21,7 @@ namespace CleanArchitecture.Identity.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            
 
             modelBuilder.Entity("CleanArchitecture.Identity.Models.ApplicationUser", b =>
                 {
@@ -100,16 +101,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
                             AccessFailedCount = 0,
                             Apellidos = "Drez",
-                            ConcurrencyStamp = "8767766b-1bcf-4854-bb16-d362e9a56644",
+                            ConcurrencyStamp = "560000a0-16ec-487c-9bb6-7eafbcc71efb",
                             Email = "admin@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Vaxi",
                             NormalizedEmail = "admin@locahost.com",
                             NormalizedUserName = "vaxidrez",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJIxdoQcfk/I/7XBddVWZvX1aM04LTcp0un9CsX2c/CmI5K0wXiZ4t1U0Aty9kIf/A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFvfsoH3Ntn4klrHt3U0E9O1/87olvw9yeqS5lez8me76gtSQOas64JSzfcH+tGINA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b17a8a35-a8d6-449a-bcce-d03ae3623bcd",
+                            SecurityStamp = "d2ce4f4b-793c-4fbe-9042-d570112afa92",
                             TwoFactorEnabled = false,
                             UserName = "vaxidrez"
                         },
@@ -118,16 +119,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "294d249b-9b57-48c1-9689-11a91abb6447",
                             AccessFailedCount = 0,
                             Apellidos = "Perez",
-                            ConcurrencyStamp = "96278be5-8594-4b7a-a2bb-5dff2161b6a1",
+                            ConcurrencyStamp = "581ee6f8-eb2e-4646-b65c-326568b3d8ef",
                             Email = "juanperez@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Juan",
                             NormalizedEmail = "juanperez@locahost.com",
                             NormalizedUserName = "juanperez",
-                            PasswordHash = "AQAAAAEAACcQAAAAELzg+hAeMWcGv6XrmsHkxrD6WtpZkTp6MDEcr8JQaVU9FYXHGWCCEMVcoXUiArQslQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIpdJQDBIpU9MPThRyMNP3hITly6hus0ciGk/fmNjkLMbGOsP58l5mvUB6s997R5Uw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "230fdc58-7dc2-4a32-a207-7bf9706bf0f5",
+                            SecurityStamp = "e962138f-f7f4-412e-9f1f-0a40f743a42f",
                             TwoFactorEnabled = false,
                             UserName = "juanperez"
                         });
@@ -163,21 +164,21 @@ namespace CleanArchitecture.Identity.Migrations
                         new
                         {
                             Id = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8",
-                            ConcurrencyStamp = "64d23dfc-009e-485f-b151-88bdc4ed94d0",
+                            ConcurrencyStamp = "8f7c8b30-b522-480d-a96e-ace503ecc4e6",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
-                            ConcurrencyStamp = "72cd3a0e-c12d-41c6-9ddf-3296a8db7fd0",
+                            ConcurrencyStamp = "9b58225d-f945-4fb1-8b09-d0a006380e77",
                             Name = "Operator",
                             NormalizedName = "OPERATOR"
                         },
                         new
                         {
                             Id = "9926c17c-ffe7-43ad-a3b3-b6d50ca71a63",
-                            ConcurrencyStamp = "ad7f7156-6567-4dfe-937c-238a80f33999",
+                            ConcurrencyStamp = "b67f3b53-1e28-42f4-a53f-c5a9d0dcded4",
                             Name = "prueba",
                             NormalizedName = "PRUEBA"
                         });
@@ -281,6 +282,8 @@ namespace CleanArchitecture.Identity.Migrations
                             RoleId = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63"
                         });
                 });
+
+            
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {

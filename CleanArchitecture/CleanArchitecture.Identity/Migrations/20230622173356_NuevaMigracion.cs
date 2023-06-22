@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CleanArchitecture.Identity.Migrations
 {
-    public partial class GenerateTables : Migration
+    public partial class NuevaMigracion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            /*
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -156,13 +157,16 @@ namespace CleanArchitecture.Identity.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            */
+            /*
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8", "af66e885-a884-4487-8cf1-193bb3d7246b", "Administrator", "ADMINISTRATOR" },
-                    { "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63", "476abfdf-9007-429e-ad9c-41e5e464f13c", "Operator", "OPERATOR" }
+                    { "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8", "8f7c8b30-b522-480d-a96e-ace503ecc4e6", "Administrator", "ADMINISTRATOR" },
+                    { "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63", "9b58225d-f945-4fb1-8b09-d0a006380e77", "Operator", "OPERATOR" },
+                    { "9926c17c-ffe7-43ad-a3b3-b6d50ca71a63", "b67f3b53-1e28-42f4-a53f-c5a9d0dcded4", "prueba", "PRUEBA" }
                 });
 
             migrationBuilder.InsertData(
@@ -170,8 +174,8 @@ namespace CleanArchitecture.Identity.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Apellidos", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Nombre", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "294d249b-9b57-48c1-9689-11a91abb6447", 0, "Perez", "24f6e7bf-1fb8-471a-a80c-9a5548c7ac37", "juanperez@locahost.com", true, false, null, "Juan", "juanperez@locahost.com", "juanperez", "AQAAAAEAACcQAAAAEPoY1NL8nfyIDPWjpv7Qsvt/GmltN5fvLoz3LEdB8EnSLJrX2C7F4typ4u6B1Jo18A==", null, false, "4bdfd5da-f264-493c-b718-662ab0415459", false, "juanperez" },
-                    { "f284b3fd-f2cf-476e-a9b6-6560689cc48c", 0, "Drez", "0e53003f-72cd-44ef-a53c-19a30ed0aa15", "admin@locahost.com", true, false, null, "Vaxi", "admin@locahost.com", "vaxidrez", "AQAAAAEAACcQAAAAENWtdrn6GOb1rjLWPIwP2qHmJR+FPwXhAKlpL8c7WnhrHwR19aE4kGV2B04r+NAelQ==", null, false, "ba36f476-a51b-42b9-ae3e-f9d56a02cec3", false, "vaxidrez" }
+                    { "294d249b-9b57-48c1-9689-11a91abb6447", 0, "Perez", "581ee6f8-eb2e-4646-b65c-326568b3d8ef", "juanperez@locahost.com", true, false, null, "Juan", "juanperez@locahost.com", "juanperez", "AQAAAAEAACcQAAAAEIpdJQDBIpU9MPThRyMNP3hITly6hus0ciGk/fmNjkLMbGOsP58l5mvUB6s997R5Uw==", null, false, "e962138f-f7f4-412e-9f1f-0a40f743a42f", false, "juanperez" },
+                    { "f284b3fd-f2cf-476e-a9b6-6560689cc48c", 0, "Drez", "560000a0-16ec-487c-9bb6-7eafbcc71efb", "admin@locahost.com", true, false, null, "Vaxi", "admin@locahost.com", "vaxidrez", "AQAAAAEAACcQAAAAEFvfsoH3Ntn4klrHt3U0E9O1/87olvw9yeqS5lez8me76gtSQOas64JSzfcH+tGINA==", null, false, "d2ce4f4b-793c-4fbe-9042-d570112afa92", false, "vaxidrez" }
                 });
 
             migrationBuilder.InsertData(
@@ -183,7 +187,9 @@ namespace CleanArchitecture.Identity.Migrations
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[] { "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8", "f284b3fd-f2cf-476e-a9b6-6560689cc48c" });
+            */
 
+            /*
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -222,6 +228,7 @@ namespace CleanArchitecture.Identity.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+            */
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

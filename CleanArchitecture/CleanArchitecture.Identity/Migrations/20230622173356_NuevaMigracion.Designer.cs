@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Identity.Migrations
 {
     [DbContext(typeof(CleanArchitectureIdentityDbContext))]
-    [Migration("20220110183520_GenerateTables")]
-    partial class GenerateTables
+    [Migration("20230622173356_NuevaMigracion")]
+    partial class NuevaMigracion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -102,16 +102,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "f284b3fd-f2cf-476e-a9b6-6560689cc48c",
                             AccessFailedCount = 0,
                             Apellidos = "Drez",
-                            ConcurrencyStamp = "0e53003f-72cd-44ef-a53c-19a30ed0aa15",
+                            ConcurrencyStamp = "560000a0-16ec-487c-9bb6-7eafbcc71efb",
                             Email = "admin@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Vaxi",
                             NormalizedEmail = "admin@locahost.com",
                             NormalizedUserName = "vaxidrez",
-                            PasswordHash = "AQAAAAEAACcQAAAAENWtdrn6GOb1rjLWPIwP2qHmJR+FPwXhAKlpL8c7WnhrHwR19aE4kGV2B04r+NAelQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFvfsoH3Ntn4klrHt3U0E9O1/87olvw9yeqS5lez8me76gtSQOas64JSzfcH+tGINA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ba36f476-a51b-42b9-ae3e-f9d56a02cec3",
+                            SecurityStamp = "d2ce4f4b-793c-4fbe-9042-d570112afa92",
                             TwoFactorEnabled = false,
                             UserName = "vaxidrez"
                         },
@@ -120,16 +120,16 @@ namespace CleanArchitecture.Identity.Migrations
                             Id = "294d249b-9b57-48c1-9689-11a91abb6447",
                             AccessFailedCount = 0,
                             Apellidos = "Perez",
-                            ConcurrencyStamp = "24f6e7bf-1fb8-471a-a80c-9a5548c7ac37",
+                            ConcurrencyStamp = "581ee6f8-eb2e-4646-b65c-326568b3d8ef",
                             Email = "juanperez@locahost.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Nombre = "Juan",
                             NormalizedEmail = "juanperez@locahost.com",
                             NormalizedUserName = "juanperez",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPoY1NL8nfyIDPWjpv7Qsvt/GmltN5fvLoz3LEdB8EnSLJrX2C7F4typ4u6B1Jo18A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIpdJQDBIpU9MPThRyMNP3hITly6hus0ciGk/fmNjkLMbGOsP58l5mvUB6s997R5Uw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4bdfd5da-f264-493c-b718-662ab0415459",
+                            SecurityStamp = "e962138f-f7f4-412e-9f1f-0a40f743a42f",
                             TwoFactorEnabled = false,
                             UserName = "juanperez"
                         });
@@ -165,16 +165,23 @@ namespace CleanArchitecture.Identity.Migrations
                         new
                         {
                             Id = "79ba8e3f-5c28-42cb-a03e-babcfb0b5bd8",
-                            ConcurrencyStamp = "af66e885-a884-4487-8cf1-193bb3d7246b",
+                            ConcurrencyStamp = "8f7c8b30-b522-480d-a96e-ace503ecc4e6",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "8c26c17c-ffe7-43ad-a3b3-b6d50ca71a63",
-                            ConcurrencyStamp = "476abfdf-9007-429e-ad9c-41e5e464f13c",
+                            ConcurrencyStamp = "9b58225d-f945-4fb1-8b09-d0a006380e77",
                             Name = "Operator",
                             NormalizedName = "OPERATOR"
+                        },
+                        new
+                        {
+                            Id = "9926c17c-ffe7-43ad-a3b3-b6d50ca71a63",
+                            ConcurrencyStamp = "b67f3b53-1e28-42f4-a53f-c5a9d0dcded4",
+                            Name = "prueba",
+                            NormalizedName = "PRUEBA"
                         });
                 });
 
