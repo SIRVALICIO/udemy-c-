@@ -7,11 +7,7 @@ using CleanArchitecture.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CleanArchitecture.Infrastructure
 {
@@ -19,6 +15,10 @@ namespace CleanArchitecture.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
+            var configurations = new ConfigurationBuilder()
+            .SetBasePath("C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.API")
+            .AddJsonFile("appSettings.json")
+            .Build();
 
             services.AddDbContext<StreamerDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ConnectionString"))
