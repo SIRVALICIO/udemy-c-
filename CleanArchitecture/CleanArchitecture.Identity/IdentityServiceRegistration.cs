@@ -1,9 +1,7 @@
 ﻿using CleanArchitecture.Application.Contracts.Identity;
 using CleanArchitecture.Application.Models.Identity;
-using CleanArchitecture.Identity.Configurations;
 using CleanArchitecture.Identity.Models;
 using CleanArchitecture.Identity.Services;
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,21 +18,7 @@ namespace CleanArchitecture.Identity
         {
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
-
-            var configurations = new ConfigurationBuilder()
-            .SetBasePath("C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\udemy-c-\\CleanArchitecture\\CleanArchitecture.API")
-            .AddJsonFile("appSettings.json")
-            .Build();
-
-
-           configurations.GetSection("ConnectionStrings")["IdentityConnectionString"]= "Data Source=SQL2019\\DLLO,14333;Initial Catalog=SEGURIDAD;User ID=practica;Password=practica;TrustServerCertificate=True";
-
-
-            var resultado = configuration.GetConnectionString("IdentityConnectionString");
-            var resultado2 = configurations.GetConnectionString("IdentityConnectionString");
-
-
-            services.AddDbContext<CleanArchitectureIdentityDbContext>(options =>
+            services.AddDbContext<CleanArchitectureIdentityDbContext>(options => 
                 options.UseSqlServer(configuration.GetConnectionString("IdentityConnectionString"),
                 b => b.MigrationsAssembly(typeof(CleanArchitectureIdentityDbContext).Assembly.FullName)));
 
@@ -57,7 +41,7 @@ namespace CleanArchitecture.Identity
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero,
+                    ClockSkew   = TimeSpan.Zero,
                     ValidIssuer = configuration["JwtSettings:Issuer"],
                     ValidAudience = configuration["JwtSettings:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:Key"]))

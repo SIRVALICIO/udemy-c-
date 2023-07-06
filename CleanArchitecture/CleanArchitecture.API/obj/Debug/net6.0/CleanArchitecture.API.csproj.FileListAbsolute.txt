@@ -433,7 +433,3 @@ C:\Users\camil\Downloads\udemy-c--main\udemy-c--main\CleanArchitecture\CleanArch
 C:\Users\camil\Downloads\udemy-c--main\udemy-c--main\CleanArchitecture\CleanArchitecture.API\obj\Debug\net6.0\CleanArchitecture.API.pdb
 C:\Users\camil\Downloads\udemy-c--main\udemy-c--main\CleanArchitecture\CleanArchitecture.API\obj\Debug\net6.0\CleanArchitecture.API.genruntimeconfig.cache
 C:\Users\camil\Downloads\udemy-c--main\udemy-c--main\CleanArchitecture\CleanArchitecture.API\obj\Debug\net6.0\ref\CleanArchitecture.API.dll
-C:\Users\camil\OneDrive\Documentos\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.API\bin\Debug\net6.0\EntityFramework.SqlServer.dll
-C:\Users\camil\OneDrive\Documentos\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.API\bin\Debug\net6.0\EntityFramework.dll
-C:\Users\camil\OneDrive\Documentos\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.API\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\camil\OneDrive\Documentos\GitHub\udemy-c-\CleanArchitecture\CleanArchitecture.API\bin\Debug\net6.0\Microsoft.AspNet.Identity.EntityFramework.dll
